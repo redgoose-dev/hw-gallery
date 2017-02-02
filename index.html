@@ -5,13 +5,67 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Gallery sample</title>
+<link rel="stylesheet" href="./vendor/material-design-icons/material-icons.css">
 <link rel="stylesheet" href="./dist/hw-gallery.css">
 </head>
 <body>
-<main>
-	hello world
+<main class="viewport">
+	<!-- Image slide -->
+	<div class="images"></div>
+	<!-- // Image slide -->
+
+	<!-- Typography -->
+	<article class="typography">
+		<h1>JennyC</h1>
+		<p class="description">This artwork’s expressive style is created by its imaginative narration forming surreal atmosphere.</p>
+		<p class="date">0000. 00. 00</p>
+	</article>
+	<!-- // Typography -->
+
+	<!-- slide controller -->
+	<nav class="slide-controller">
+		<button type="button" class="btn-prev" title="prev image">
+			<span><i class="material-icons">chevron_left</i></span>
+		</button>
+		<button type="button" class="btn-next" title="next image">
+			<span><i class="material-icons">chevron_right</i></span>
+		</button>
+	</nav>
+	<!-- // slide controller -->
+
+	<!-- Thumbnail images -->
+	<article class="thumbnail-images">
+		<div class="index">
+			<ul>
+				<li><button type="button" style="background-image: url('http://goose.redgoose.me/data/upload/original/201702/rg-20170110-000091.jpg')"></button></li>
+				<li><button type="button" style="background-image: url('http://goose.redgoose.me/data/upload/original/201702/rg-20170110-000091.jpg')"></button></li>
+			</ul>
+		</div>
+		<nav class="button-area">
+			<button type="button" class="btn-toggle">
+				<span class="open"><i class="material-icons">apps</i></span>
+				<span class="close"><i class="material-icons">expand_more</i></span>
+			</button>
+		</nav>
+	</article>
+	<!-- // Thumbnail images -->
+
+	<!-- Loading -->
+	<div class="loading">
+		<div class="sk-folding-cube">
+			<div class="sk-cube1 sk-cube"></div>
+			<div class="sk-cube2 sk-cube"></div>
+			<div class="sk-cube4 sk-cube"></div>
+			<div class="sk-cube3 sk-cube"></div>
+		</div>
+	</div>
+	<!-- // Loading -->
 </main>
 <script src="./dist/hw-gallery.vendor.js"></script>
 <script src="./dist/hw-gallery.js"></script>
+<script>
+var gal = new window.HWGallery();
+gal.start();
+</script>
 </body>
 </html>
