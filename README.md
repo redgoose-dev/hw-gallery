@@ -21,3 +21,8 @@ gallery tech page
 - jQuery : https://jquery.com
 - Material design icons : https://material.io/icons/
 - skinkit : http://tobiasahlin.com/spinkit/
+
+
+## Tested browser
+- Chrome for desktop
+- Safari for desktop
