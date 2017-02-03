@@ -21,6 +21,33 @@ function ImagesController(root) {
 		root.images.next();
 	};
 
+	/**
+	 * Control visible buttons
+	 *
+	 * @param {Number} current
+	 */
+	this.controlVisible = function(current)
+	{
+		if (current === 0)
+		{
+			this.$prev.addClass('hide');
+		}
+		else
+		{
+			this.$prev.removeClass('hide');
+		}
+
+		if (root.images.total-1 === current)
+		{
+			this.$next.addClass('hide');
+		}
+		else
+		{
+			this.$next.removeClass('hide');
+		}
+	};
+
+
 	// initial events
 	this.$prev.on('click', this.prev.bind(this));
 	this.$next.on('click', this.next.bind(this));

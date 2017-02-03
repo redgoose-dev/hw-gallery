@@ -35,13 +35,14 @@ html, body, main {height: 100%;}
 		float: left; position: relative;
 		height: 100%; width: 100vw;
 		overflow: hidden;
+		// loading icon
 		&:after {
 			content: ''; display: block; position: absolute;
-			left: 50%; top: 50%; margin: -25px 0 0 -25px;
-			border: 6px solid #f3f3f3;
-			border-top: 6px solid #111;
+			left: 50%; top: 50%; margin: -15px 0 0 -15px;
+			border: 4px solid #f3f3f3;
+			border-top: 4px solid #111;
 			border-radius: 50%;
-			width: 50px; height: 50px;
+			width: 30px; height: 30px;
 			animation: spin 1s linear infinite;
 			@keyframes spin {
 				0% { transform: rotate(0deg); }
@@ -77,23 +78,37 @@ html, body, main {height: 100%;}
 	top: 100px; left: 100px;
 	color: #111;
 	%bg {background: #fff;}
+	%shadow {box-shadow: 0 1px 3px rgba(0,0,0,.15);}
 	h1 {
 		@extend %bg;
+		@extend %shadow;
 		display: inline-block; vertical-align: top;
-		margin: 0 0 1px; padding: 0 10px;
+		margin: 0 0 2px; padding: 0 10px;
 		font-size: 42px; font-weight: 800;
+		transition: transform .2s ease-out;
+		transform-origin: 50% 0;
+		&.hide {
+			transform: rotateX(90deg);
+		}
 	}
 	.description {
 		@extend %bg;
+		@extend %shadow;
 		display: block; vertical-align: top;
-		margin: 0 0 1px; padding: 6px 10px;
+		margin: 0 0 2px; padding: 6px 10px;
 		font-size: 12px;
 	}
 	.date {
 		@extend %bg;
+		@extend %shadow;
 		display: inline-block; vertical-align: top;
-		margin: 0; padding: 6px 10px;
+		margin: 0; padding: 5px 10px;
 		font-size: 10px;
+	}
+
+	@media screen and (max-width: 768px) {
+		top: 24vh; left: 10px; right: 10px;
+		h1 {font-size: 30px;}
 	}
 }
 
@@ -180,8 +195,8 @@ html, body, main {height: 100%;}
 			border: none;
 			background: #fff;
 			cursor: pointer;
-			-webkit-transition: -webkit-transform .3s ease-out;
-			transition: transform .3s ease-out;
+			-webkit-transition: -webkit-transform .5s ease-out;
+			transition: transform .5s ease-out;
 			-webkit-transform-origin: 0 100%;
 			transform-origin: 0 100%;
 			-webkit-transform: translateY(0);
@@ -203,6 +218,7 @@ html, body, main {height: 100%;}
 	}
 
 	.index {
+		box-shadow: 0 -1px 2px rgba(0,0,0,.2);
 		ul {
 			margin: 0; padding: 30px 40px; list-style: none;
 			background: #fff;
@@ -215,9 +231,6 @@ html, body, main {height: 100%;}
 			margin-left: 10px;
 			cursor: pointer;
 			&:first-child {margin-left: 0;}
-			&.active {
-
-			}
 		}
 		button {
 			display: inline-block; vertical-align: top; margin: 0;
@@ -226,9 +239,7 @@ html, body, main {height: 100%;}
 			background-position: 50% 50%;
 			background-size: cover;
 			border: none; outline: 0; cursor: pointer;
-		}
-		li.active {
-			button {
+			&.active {
 				&:after {
 					content: ''; display: block; position: absolute;
 					left: 0; right: 0; top: 0; bottom: 0;
